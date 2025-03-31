@@ -1,0 +1,302 @@
+:root {
+    --primary-color: #304ffe; /* Example primary color */
+    --primary-color-dark: #0d28a6;
+    --secondary-color: #f50057; /* Example secondary color */
+    --text-dark: #222;
+    --text-light: #777;
+    --bg-light: #f7f7f7;
+    --bg-white: #fff;
+    --border-color: #ddd;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Using the font included in the HTML */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #24292e; /* Dark background for sidebar */
+    color: var(--bg-white);
+    padding-top: 20px;
+    grid-row: 1 / 4;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .nav__logo img {
+    max-width: 35px;
+  }
+  
+}
+
+@media (width > 768px) {
+    .nav__logo img {
+    max-width: 45px;
+  }
+
+  .nav__logo span {
+    font-size: 1.5rem;
+    color: var(--primary-color-dark);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  max-width: 35px;
+}
+
+.logo span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+.sidebar-brand {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-brand h1 {
+    color: var(--bg-white);
+    margin: 0;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--bg-white);
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-nav li a.active,
+.sidebar-nav li a:hover {
+    background-color: #1a1e23;
+}
+
+.sidebar-nav li a span {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.sidebar-nav li.logout {
+    margin-top: auto;
+    padding: 20px;
+}
+
+/* Main Content Styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--bg-white);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-wrapper input {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.user-wrapper div {
+    margin-left: 15px;
+    text-align: right;
+}
+
+.user-wrapper h4 {
+    margin-bottom: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: var(--bg-white);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.card-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.card-header h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.card-body p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.content-area {
+    background-color: var(--bg-white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+footer {
+    background-color: var(--bg-white);
+    text-align: center;
+    padding: 10px;
+    grid-column: 1 / 3;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+/* Style for forms */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: grid; /* Enable grid layout */
+    grid-template-columns: 1fr 1fr; /* Create two equal columns */
+    grid-gap: 10px; /* Add some gap between the columns and rows */
+}
+
+form div {
+    margin-bottom: 0; /* Remove margin-bottom as grid will handle spacing */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="datetime-local"],
+form textarea,
+form select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    grid-column: 1 / 3; /* Make the submit button span across both columns */
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* Style for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style for links in tables */
+table a {
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+table a:hover {
+    color: var(--secondary-color);
+}
